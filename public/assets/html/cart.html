@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FruitStop - Cart</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <link rel="stylesheet" href="assets/style/style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>  
+    </head>
+    <body>
+        <!-- HERO CONTAINER -->
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-white">FruitStop</h1>
+                </div>
+            </div>
+        </section>
+        <!-- NAVBAR SECTION -->
+        <div class="columns is-centered">
+            <div class="column is-two-thirds has-text-right">
+                <div class="column">
+                    <a href="/" class="has-text-black"><i class="bar-icon fas fa-home fa-2x"></i></a>
+                    <a href="/cart" class="has-text-black"><i class="bar-icon fas fa-shopping-cart fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- CART CONTENT AREA -->
+        <div class="columns is-centered is-vcentered">
+            <div class="column is-two-thirds">
+                <!-- This area is dynamically populated with jQuery via the data file -->
+                <div id="cart-area">
+                    <div class="cart-card has-text-centered">
+                        <h2 class="title is-2">My Cart</h2>
+
+
+                        <div>
+                            <div class="columns is-vcentered is-centered">
+                                <div class="column has-text-centered">
+                                    <img class="prod-img" src="assets/images/Apple.jpg" alt="Apple">
+                                </div>
+                                <div class="column has-text-centered">
+                                    <h3 class="title is-3">${prod.description}</h3>
+                                    <h2>Unit Price: <b>from data file</b></h2>
+                                    <h2>Quantity: <b>from API</b></h2>
+                                    <h2>Total Cost: <b>from API</b></h2>
+                                    <h2 class="prod-id">Product ID: from data file</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <h4 class="title is-4">Cart Total:</h4>
+                        <h4 class="title is-4">FROM API CALC</h4>
+                        
+                        <div class="column has-text-centered">
+                            <button id="checkout" class="button is-info checkout"><i class="fas fa-shopping-cart" style="margin-right: 1rem;"></i>Checkout</button>
+                            <button id="empty-cart" class="button is-light is-inverted is-outlined"><i class="fas fa-trash" style="margin-right: 1rem;"></i>Empty Cart</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER AREA -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <strong>FruitStop</strong> by Cody Clegg</a>
+            </div>
+        </footer>
+        <script type="text/javascript" src="assets/data/products.json"></script>
+    </body>
+</html>
