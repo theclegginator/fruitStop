@@ -72,7 +72,16 @@ $(document).ready(function() {
             // show and hide a display indicating success for the user
             $("#success").show();
             successTimer = setTimeout(function(){ $("#success").fadeOut("fast"); }, 1000);
+            cartQuant();
         })
         .catch((err) => console.log("Error:", err))
     })
+
+    // function to show the cart quantity in the upper corner
+    function cartQuant() {
+        $("#cart-quant").text(localStorage.getItem("fruitCart").length);
+    }
+
+    // run the count function by default upon page load
+    cartQuant();
 })

@@ -9,6 +9,7 @@ $(document).ready(function() {
             // lastly update the cost on the page (should display 0, as cart was just emptied) and the items displaying.
             getCurrCost();
             $("#cart-items").empty();
+            cartQuant();
         })
         .catch((err) => console.log("Error:", err))
     })
@@ -68,4 +69,11 @@ $(document).ready(function() {
     // get the cart value upon loading the page
     getCurrCost();
     getCartItems();
+    // function to show the cart quantity in the upper corner
+    function cartQuant() {
+        $("#cart-quant").text(localStorage.getItem("fruitCart").length);
+    }
+
+    // run the count function by default upon page load
+    cartQuant();
 })
