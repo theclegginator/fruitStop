@@ -10,7 +10,7 @@ The following Node modules are used (and are included in the package.json file):
 ### How to Run the App on Your Machine
 * Clone the git repo.
 * CD into the folder and run 'npm install' in the terminal to install dependencies.
-* Run 'node server.js' or 'nodemon server.js' to run the server.
+* Run 'node server.js' or 'nodemon server.js' in the terminal or command line to run the server.
 * Navigate to http://localhost:8080/  in your browser to view the app.
 
 ## Features
