@@ -10,6 +10,7 @@ $(document).ready(function() {
             getCurrCost();
             $("#cart-items").empty();
         })
+        .catch((err) => console.log("Error:", err))
     })
 
     // function to find the current value of all items in the cart.
@@ -30,6 +31,7 @@ $(document).ready(function() {
         .then((data) => {
             $("#cartVal").text(`$${data}`);
         })
+        .catch((err) => console.log("Error:", err))
     }
 
     function getCartItems() {

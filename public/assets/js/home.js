@@ -73,5 +73,6 @@ $(document).ready(function() {
             $("#success").show();
             successTimer = setTimeout(function(){ $("#success").fadeOut("fast"); }, 1000);
         })
+        .catch((err) => console.log("Error:", err))
     })
 })

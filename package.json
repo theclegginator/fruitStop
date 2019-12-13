@@ -1,0 +1,25 @@
+{
+  "name": "fruitstop",
+  "version": "1.0.0",
+  "description": "simple ecommerce modeling API",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theclegginator/fruitStop.git"
+  },
+  "author": "Cody Clegg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theclegginator/fruitStop/issues"
+  },
+  "homepage": "https://github.com/theclegginator/fruitStop#readme"
+}
