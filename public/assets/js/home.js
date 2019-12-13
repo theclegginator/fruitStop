@@ -41,7 +41,10 @@ $(document).ready(function() {
     }
 
     // event listener for adding an item to the cart
+    let successTimer;
     $("#product-area").on("click", ".add-to-cart", function() {
+        $("#success").hide(); // ensure success alert is already hidden if the user is clicking fast.
+        clearTimeout(successTimer)
         let prodId = $(this).attr('id');
         
         // ============================
@@ -61,12 +64,14 @@ $(document).ready(function() {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             // =================
             // CART PERSISTENCE
             // =================
             // once we hear back from the server, set the local storage to the new cart for persistence.
             localStorage.setItem("fruitCart", data);
+            // show and hide a display indicating success for the user
+            $("#success").show();
+            successTimer = setTimeout(function(){ $("#success").fadeOut("fast"); }, 1000);
         })
     })
 })

@@ -5,6 +5,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* CLASSES */
 .hero {
     background: linear-gradient(74deg, #00a3ff, #7f4ceb);
     color: white;
@@ -51,6 +53,14 @@ body {
     margin-bottom: 1rem;
     background-color: rgb(202, 202, 202);
 }
+
+/* IDs */
 #cartVal {
     color: rgb(61, 156, 61);
+}
+#success {
+    display: none;
+    position: fixed;
+    top: 10rem;
+    right: 1rem;
 }

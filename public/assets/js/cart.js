@@ -4,7 +4,6 @@ $(document).ready(function() {
         fetch("/api/new-cart")
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             // update local storage with result (empty string for empty cart)
             localStorage.setItem("fruitCart", data);
             // lastly update the cost on the page (should display 0, as cart was just emptied) and the items displaying.
@@ -47,7 +46,6 @@ $(document).ready(function() {
         $.getJSON("assets/data/products.json", function(products) {  
             products.forEach(function(prod){
                 if (cartMap[prod.id]) {
-                    console.log(prod.id)
                     let itemCard = `
                         <div class="columns is-vcentered is-centered">
                             <div class="column has-text-centered">
