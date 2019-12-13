@@ -1,6 +1,10 @@
 $(document).ready(function() {
+    // =====================
+    // BUILD PRODUCT LISTING
+    // =====================
+
     // generate cards based on the product data file:
-    $.getJSON( "assets/data/products.json", function( products ) {  
+    $.getJSON("assets/data/products.json", function(products) {  
         products.forEach(function(prod){
             // create a card template and pass all pertinent data from the product data into the HTML
             let productCard = `
@@ -25,9 +29,44 @@ $(document).ready(function() {
         });
     });
 
+    // =================
+    // CART PERSISTENCE
+    // =================
+
+    // upon page load, check to see if the user has any existing products in their cart
+    let currentCart = localStorage.getItem("fruitCart");
+    if (currentCart === null) {
+        // if there is no currentCart in session storage, set it to a blank string (how we represent an empty cart).
+        localStorage.setItem("fruitCart", "");
+    }
+
     // event listener for adding an item to the cart
     $("#product-area").on("click", ".add-to-cart", function() {
         let prodId = $(this).attr('id');
-        alert(prodId)
+        
+        // ============================
+        // POST TO CART UPDATE ENDPOINT
+        // ============================
+        fetch("/api/add-item", {
+            method: 'POST',
+            headers: {
+                "Accept": "application/json, text/plain, */*",
+                "Content-type": "application/json"
+            },
+            // send the current cart configuration from the user's local storage as well as the new prod ID
+            body: JSON.stringify({
+                currCart: localStorage.getItem("fruitCart"),
+                id: prodId,
+            })
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            // =================
+            // CART PERSISTENCE
+            // =================
+            // once we hear back from the server, set the local storage to the new cart for persistence.
+            localStorage.setItem("fruitCart", data);
+        })
     })
 })

@@ -36,29 +36,16 @@
                         <h2 class="title is-2">My Cart</h2>
 
 
-                        <div>
-                            <div class="columns is-vcentered is-centered">
-                                <div class="column has-text-centered">
-                                    <img class="prod-img" src="assets/images/Apple.jpg" alt="Apple">
-                                </div>
-                                <div class="column has-text-centered">
-                                    <h3 class="title is-3">${prod.description}</h3>
-                                    <h2>Unit Price: <b>from data file</b></h2>
-                                    <h2>Quantity: <b>from API</b></h2>
-                                    <h2>Total Cost: <b>from API</b></h2>
-                                    <h2 class="prod-id">Product ID: from data file</h2>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="cart-items"></div>
 
                         <div class="divider"></div>
 
                         <h4 class="title is-4">Cart Total:</h4>
-                        <h4 class="title is-4">FROM API CALC</h4>
+                        <h4 id="cartVal" class="title is-4"></h4>
                         
                         <div class="column has-text-centered">
-                            <button id="checkout" class="button is-info checkout"><i class="fas fa-shopping-cart" style="margin-right: 1rem;"></i>Checkout</button>
-                            <button id="empty-cart" class="button is-light is-inverted is-outlined"><i class="fas fa-trash" style="margin-right: 1rem;"></i>Empty Cart</button>
+                            <button id="checkout" class="button empty-cart is-info checkout"><i class="fas fa-shopping-cart" style="margin-right: 1rem;"></i>Checkout</button>
+                            <button id="empty-cart" class="button empty-cart is-light is-inverted is-outlined"><i class="fas fa-trash" style="margin-right: 1rem;"></i>Empty Cart</button>
                         </div>
 
                     </div>
@@ -72,5 +59,6 @@
             </div>
         </footer>
         <script type="text/javascript" src="assets/data/products.json"></script>
+        <script type="text/javascript" src="assets/js/cart.js"></script>
     </body>
 </html>
