@@ -17,6 +17,7 @@ The following Node modules are used (and are included in the package.json file):
 
 ### Home Page
 * This page allows you to add fruits to your cart. 
+* The contents of this page are dynamically populated by reading the "database" (assets/data/products.json) and building the HTML out with jQuery.
 * A count will display next to the cart indicating how many items there are in the cart.
 * Upon adding a fruit to your cart, the "add-item" API endpoint will be called from the client to update the current cart.
 * If the cart update is successful, a success icon will indicate that your cart has been updated.
